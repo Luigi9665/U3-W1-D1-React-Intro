@@ -42,7 +42,8 @@ button {
   border-radius: 10px;
   cursor: pointer;
 }
-button {
+.noAnimation,
+.animated-button {
   position: fixed;
   top: 38%;
   left: 50%;
@@ -51,13 +52,14 @@ button {
   transition: transform 0.1s ease-in-out;
 }
 
-button:hover {
+.noAnimation:hover,
+.animated-button:hover {
   transform: translate(-50%, -70%) scale(1.15);
   background: orange;
   color: #050801;
 }
 
-button:not(.animated-button):active {
+.noAnimation:active {
   transform: translate(-50%, -130%) scale(1);
   width: 350px;
   height: 350px;
@@ -169,4 +171,12 @@ button:not(.animated-button):active {
   100% {
     bottom: 100%;
   }
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
 }
