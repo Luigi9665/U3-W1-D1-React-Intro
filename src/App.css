@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+
+body {
+  height: 100vh;
+  position: relative;
+  background: #000000;
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CONTAINER */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+/* IMG */
+img {
+  border-radius: 50px;
+  width: 100%;
+  height: 1000px;
+}
+
+/* BUTTON STILE E ANIMAZIONE */
+button {
+  padding: 0.5rem 1rem;
+  color: rgb(208, 127, 28);
+  background-color: rgb(0, 0, 0);
+  font-size: 2rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+button {
+  position: fixed;
+  top: 38%;
+  left: 50%;
+  /* translate: (-50%, -50%); */
+  transform: translate(-50%, -70%);
+  transition: transform 0.1s ease-in-out;
+}
+
+button:hover {
+  transform: translate(-50%, -70%) scale(1.15);
+  background: orange;
+  color: #050801;
+}
+
+button:not(.animated-button):active {
+  transform: translate(-50%, -130%) scale(1);
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: orange;
+  color: orange;
+  box-shadow: 0 0 25px orange, 0 0 40px orange, 0 0 70px orange, 0 0 235px orange;
+}
+
+.animated-button {
+  position: fixed;
+  top: 54%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  display: inline-block;
+  padding: 25px 30px;
+  margin: 40px 0;
+  color: #ffffff;
+  text-transform: uppercase;
+  transition: 0.5s;
+  letter-spacing: 4px;
+  overflow: hidden;
+  margin-left: 12px;
+}
+
+.animated-button:hover {
+  transform: translate(-50%, 0%) scale(1.15);
+  background: #ffffff;
+  color: #050801;
+  box-shadow: 0 0 5px #ffffff, 0 0 25px #ffffff, 0 0 50px #ffffff, 0 0 200px #ffffff;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+.animated-button:active {
+  transform: translate(-50%, 0%) scale(1);
+}
+
+.animated-button span {
+  position: absolute;
+  display: block;
+}
+
+.animated-button span:nth-child(1) {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ffffff);
+  animation: animate1 1s linear infinite;
+}
+@keyframes animate1 {
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+.animated-button span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #ffffff);
+  animation: animate2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+@keyframes animate2 {
+  0% {
+    top: -100%;
+  }
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+.animated-button span:nth-child(3) {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #ffffff);
+  animation: animate3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+@keyframes animate3 {
+  0% {
+    right: -100%;
+  }
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+.animated-button span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #ffffff);
+  animation: animate4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+@keyframes animate4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}
